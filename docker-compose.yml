@@ -1,0 +1,14 @@
+﻿version: '3.7'
+
+services:
+  samba:
+    build:
+      context: .
+      dockerfile: ./samba/Dockerfile
+    command: /bin/sh -c "/bin/chown meu:meu /mnt/share && /usr/sbin/smbd -F"
+    volumes:
+      - /mnt/share:/mnt/share
+    restart: always
+    ports:
+      - 139:139
+      - 445:445
