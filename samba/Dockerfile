@@ -1,4 +1,4 @@
-﻿FROM ubuntu
+﻿FROM ubuntu:18.04
 RUN apt-get update -y
 RUN apt install -fy samba
 RUN useradd -m -d /mnt/share meu
